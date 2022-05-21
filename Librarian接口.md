@@ -41,6 +41,8 @@ Librarian接口
 
 ### 注册Member账号
 
+默认密码为1234
+
 请求：
 
 | URL  | /register |
@@ -51,7 +53,6 @@ Librarian接口
 | -------- | ----------- |
 | token    | admin token |
 | username |             |
-| password |             |
 | email    |             |
 
 返回例子：
@@ -211,10 +212,11 @@ Librarian接口
 | ---- | ----------- |
 | 方法 | POST        |
 
-| Key    | Value       |
-| ------ | ----------- |
-| token  | admin token |
-| bookId | 图书ID      |
+| Key    | Value                    |
+| ------ | ------------------------ |
+| token  | admin token              |
+| bookId | 图书ID                   |
+| state  | 3或4（3：损毁，4：遗失） |
 
 返回例子：
 
@@ -231,6 +233,75 @@ Librarian接口
     "status": 19
 }
 ```
+
+
+
+
+
+### 选择一本书借阅
+
+请求：
+
+| URL  | /borrowBook |
+| ---- | ----------- |
+| 方法 | POST        |
+| Body | form-data   |
+
+| Key    | Value          |
+| ------ | -------------- |
+| token  |                |
+| bookId | 要借阅的图书ID |
+| userId |                |
+
+返回例子：
+
+```json
+{
+    "msg": "借阅失败，该图书已经被借出",
+    "status": 10
+}
+```
+
+```json
+{
+    "msg": "借阅成功",
+    "status": 11
+}
+```
+
+
+
+### 选择一本书归还
+
+请求：
+
+| URL  | /returnBook |
+| ---- | ----------- |
+| 方法 | POST        |
+| Body | form-data   |
+
+| Key    | Value          |
+| ------ | -------------- |
+| token  |                |
+| bookId | 要借阅的图书ID |
+
+返回例子：
+
+```json
+{
+    "msg": "归还失败，该图书不是借给你的",
+    "status": 12
+}
+```
+
+```json
+{
+    "msg": "归还失败，该图书不是借给你的",
+    "status": 12
+}
+```
+
+
 
 
 
@@ -450,6 +521,182 @@ Librarian接口
 {
     "msg": "删除用户成功",
     "status": 23
+}
+```
+
+
+
+### 获取总注册用户
+
+请求：
+
+| URL  | /getMemberCount |
+| ---- | --------------- |
+| 方法 | POST            |
+
+| Key   | Value       |
+| ----- | ----------- |
+| token | admin token |
+
+返回例子：
+
+```json
+{
+    "count": 2
+}
+```
+
+
+
+### 获取总藏书量（By ISBN）
+
+请求：
+
+| URL  | /getBookCountByISBN |
+| ---- | ------------------- |
+| 方法 | POST                |
+
+| Key   | Value       |
+| ----- | ----------- |
+| token | admin token |
+
+返回例子：
+
+```json
+{
+    "count": 2
+}
+```
+
+
+
+### 获取总藏书量（By Copy）
+
+请求：
+
+| URL  | /getBookCountByCopy |
+| ---- | ------------------- |
+| 方法 | POST                |
+
+| Key   | Value       |
+| ----- | ----------- |
+| token | admin token |
+
+返回例子：
+
+```json
+{
+    "count": 14
+}
+```
+
+
+
+### 获取当前借阅量
+
+请求：
+
+| URL  | /getCurrentBorrowCount |
+| ---- | ---------------------- |
+| 方法 | POST                   |
+
+| Key   | Value       |
+| ----- | ----------- |
+| token | admin token |
+
+返回例子：
+
+```json
+{
+    "count": 1
+}
+```
+
+
+
+### 获取历史总借阅量
+
+请求：
+
+| URL  | /getHistoryBorrowCount |
+| ---- | ---------------------- |
+| 方法 | POST                   |
+
+| Key   | Value       |
+| ----- | ----------- |
+| token | admin token |
+
+返回例子：
+
+```json
+{
+    "count": 9
+}
+```
+
+
+
+### 获取总损毁的图书量
+
+请求：
+
+| URL  | /getDamagedBookCount |
+| ---- | -------------------- |
+| 方法 | POST                 |
+
+| Key   | Value       |
+| ----- | ----------- |
+| token | admin token |
+
+返回例子：
+
+```json
+{
+    "count": 2
+}
+```
+
+
+
+### 获取总遗失的图书量
+
+请求：
+
+| URL  | /getLostBookCount |
+| ---- | ----------------- |
+| 方法 | POST              |
+
+| Key   | Value       |
+| ----- | ----------- |
+| token | admin token |
+
+返回例子：
+
+```json
+{
+    "count": 1
+}
+```
+
+
+
+### 获取总收集的罚款量
+
+请求：
+
+| URL  | /getPaidFine |
+| ---- | ------------ |
+| 方法 | POST         |
+
+| Key   | Value       |
+| ----- | ----------- |
+| token | admin token |
+
+返回例子：
+
+```json
+{
+    "fine": 4
 }
 ```
 
