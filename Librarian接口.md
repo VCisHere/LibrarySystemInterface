@@ -700,3 +700,51 @@ Librarian接口
 }
 ```
 
+
+
+### 获取历史罚款列表
+
+获取页数：
+
+请求：
+
+| URL  | /getHistoryFineListPages |
+| ---- | ------------------------ |
+| 方法 | POST                     |
+
+| Key   | Value       |
+| ----- | ----------- |
+| token | admin token |
+
+返回例子：
+
+```json
+{
+    "page": 1
+}
+```
+
+获取一页罚款列表：
+
+请求：
+
+| URL  | /getHistoryFineList |
+| ---- | ------------------- |
+| 方法 | POST                |
+
+| Key   | Value       |
+| ----- | ----------- |
+| token | admin token |
+| page  |             |
+
+返回例子：
+
+```
+[
+	{
+		"Fine":4,
+		"Done":1
+	}
+]
+```
+
