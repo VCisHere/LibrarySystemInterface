@@ -381,7 +381,40 @@ Librarian接口
 ]
 ```
 
+### 获取单个用户归还图书历史信息
 
+请求：
+
+| URL  | /getMemberReturnHistory |
+| ---- | ----------------------- |
+| 方法 | POST                    |
+
+| Key   | Value       |
+| ----- | ----------- |
+| token | admin token |
+| page  |             |
+| userid| User's ID   |
+
+返回例子: 
+```json
+[
+    {
+        "Id": 34,
+        "Name": "JavaScript开发实战",
+        "Author": "约翰·拉尔森",
+        "Isbn": "9787111586715",
+        "Language": "Chinese",
+        "Location": "A-1",
+        "Category": "计算机",
+        "Status": 2,
+        "StartTime": "2022-04-11T13:26:23Z",
+        "EndTime": "2022-04-24T13:26:36Z",
+        "Deadline": "2022-04-21T13:26:23Z",
+        "Fine": 4,
+        "UserId": 10001
+    },
+]
+```
 
 ### 获取全局Member信息
 
