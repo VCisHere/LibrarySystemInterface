@@ -871,3 +871,43 @@ Librarian接口
 
 返回例子：略
 
+
+
+### 获取Member罚款历史
+
+获取页数：
+
+请求：
+
+| URL  | /getMemberFineHistoryPages |
+| ---- | -------------------------- |
+| 方法 | POST                       |
+
+| Key    | Value       |
+| ------ | ----------- |
+| token  | admin token |
+| userId |             |
+
+返回例子：
+
+```json
+{
+    "page": 1
+}
+```
+
+获取一页罚款历史：
+
+请求：
+
+| URL  | /getMemberFineHistory |
+| ---- | --------------------- |
+| 方法 | POST                  |
+
+| Key    | Value       |
+| ------ | ----------- |
+| token  | admin token |
+| userId |             |
+| page   |             |
+
+返回例子：略
