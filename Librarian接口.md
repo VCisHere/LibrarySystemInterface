@@ -748,3 +748,126 @@ Librarian接口
 ]
 ```
 
+
+
+### 获取Member借阅历史
+
+获取页数：
+
+请求：
+
+| URL  | /getMemberBorrowHistoryPages |
+| ---- | ---------------------------- |
+| 方法 | POST                         |
+
+| Key    | Value       |
+| ------ | ----------- |
+| token  | admin token |
+| userId |             |
+
+返回例子：
+
+```json
+{
+    "page": 1
+}
+```
+
+获取一页借阅历史：
+
+请求：
+
+| URL  | /getMemberBorrowHistory |
+| ---- | ----------------------- |
+| 方法 | POST                    |
+
+| Key    | Value       |
+| ------ | ----------- |
+| token  | admin token |
+| userId |             |
+| page   |             |
+
+返回例子：略
+
+
+
+### 获取Member归还历史
+
+获取页数：
+
+请求：
+
+| URL  | /getMemberReturnHistoryPages |
+| ---- | ---------------------------- |
+| 方法 | POST                         |
+
+| Key    | Value       |
+| ------ | ----------- |
+| token  | admin token |
+| userId |             |
+
+返回例子：
+
+```json
+{
+    "page": 1
+}
+```
+
+获取一页归还历史：
+
+请求：
+
+| URL  | /getMemberReturnHistory |
+| ---- | ----------------------- |
+| 方法 | POST                    |
+
+| Key    | Value       |
+| ------ | ----------- |
+| token  | admin token |
+| userId |             |
+| page   |             |
+
+返回例子：略
+
+
+
+### 获取Member预约历史
+
+获取页数：
+
+请求：
+
+| URL  | /getMemberReserveHistoryPages |
+| ---- | ----------------------------- |
+| 方法 | POST                          |
+
+| Key    | Value       |
+| ------ | ----------- |
+| token  | admin token |
+| userId |             |
+
+返回例子：
+
+```json
+{
+    "page": 1
+}
+```
+
+获取一页预约历史：
+
+请求：
+
+| URL  | /getMemberReserveHistory |
+| ---- | ------------------------ |
+| 方法 | POST                     |
+
+| Key    | Value       |
+| ------ | ----------- |
+| token  | admin token |
+| userId |             |
+| page   |             |
+
+返回例子：略
+
